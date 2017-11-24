@@ -1128,3 +1128,22 @@ pre.error {
   white-space: pre-line; }
 
 /*# sourceMappingURL=style.css.map*/
+
+
+/* ----- Perso ----- */
+.col4{
+  width: 30%;
+  margin: 1% 1em;
+  float: left;
+  height: 300px;
+}
+@media (max-width : 600px){
+  .col4{
+    width: 100%;
+  }
+}
+.ovflow{
+  width: 100%;
+  overflow: hidden;
+  height: 100px;
+}

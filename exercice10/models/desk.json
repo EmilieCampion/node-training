@@ -1,0 +1,16 @@
+[{
+	"name": "Jane Fonda",
+	"location": {
+		"address": "Boulevard Initilis N7 bt4 7000 MONS, Belgique",
+		"coordinates": "Mons",
+		"type": "point"
+	}
+},
+{
+	"name": "Gandhi Buddha",
+	"location": {
+		"address": "Place du Taj Mahal, Inde",
+		"coordinates": "Inde",
+		"type": "point"
+	}
+}]

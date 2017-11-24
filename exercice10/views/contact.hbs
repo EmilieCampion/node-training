@@ -1,6 +1,10 @@
 {{!-- this is index content --}}
 <h1>Contact</h1>
+{{#each desks}}
+{{this.coordinates}}
 <h2>Personne de contact</h2>
-{{{name}}}
+{{this.name}}
 <h2>Lieu</h2>
-{{rue}}
+{{this.address}}
+
+{{/each}}

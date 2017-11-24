@@ -16,9 +16,11 @@ mongoose.connect(process.env.DB_HOST, {useMongoClient:true}, (err)=>{
     console.log("mongo is now connected to our system please request away :)");
 });
 
+
 // Import models
 
 require('./models/Magasin');
+require('./models/Desk');
 
 // Start our app!
 const app = require('./app');

@@ -1,9 +1,9 @@
 <h1>Magasins</h1>
 {{#each magasins}}
-<div>
+<div class="col4">
     <h3>{{this.name}}</h3>
+    <div class="ovflow"><img src="{{this.photo}}" alt="{{this.description}}"></div>
     <p>{{this.description}}</p>
-    <img src="{{this.photo}}" alt="{{this.description}}">
 </div>
 
 {{/each}}

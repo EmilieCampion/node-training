@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const magasinController = require('../controllers/magasinController');
+const deskController = require('../controllers/deskController');
 const pagesController = require('../controllers/pagesController');
 
 // Do work here
@@ -45,5 +46,6 @@ const pagesController = require('../controllers/pagesController');
 router.get('/',magasinController.getMagasins)
 router.get('/magasins',magasinController.getMagasins)
 router.get('/about',pagesController.about);
+
 router.get('/contact',pagesController.contact);
 module.exports = router;
