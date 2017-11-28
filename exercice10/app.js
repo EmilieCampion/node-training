@@ -4,23 +4,49 @@ const path = require('path');
 const promisify = require('es6-promisify');
 const routes = require('./routes/index');
 const helpers = require('./helpers');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const flash = require('connect-flash');
 const errorHandlers = require('./handlers/errorHandlers');
-
+const sessionStore = new session.MemoryStore;
 // create our Express app
 const app = express();
 
 // view engine setup
 app.engine('hbs', hbs.express4({
-    partialsDir :[`${__dirname}/views/partials`],
-    defaultLayout :`${__dirname}/views/layouts/main.hbs`
+    partialsDir: [`${__dirname}/views/partials`],
+    defaultLayout: `${__dirname}/views/layouts/main.hbs`
 }))
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
-
+helpers.registerHelpers(hbs);
 // serves up static files from the public folder. Anything in public/ will just be served up as the file it is
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Take the raw requests and turn them into usable properties of req.body
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+// Cookie management
+app.use(cookieParser('secret'));
+// Session management
+
+app.use(session({
+    cookie: { maxAge: 60000 },
+    store: sessionStore,
+    saveUninitialized: true,
+    resave: 'true',
+    secret: 'secret'
+}));
+// Flash message management
+app.use(flash());
+
+app.use((req, res, next) => {
+    res.locals.flash = req.session.flash;
+    delete req.session.flash;
+    next();
+})
 app.use('/', routes);
 
 // If that above routes didnt work, we 404 them and forward to error handler

@@ -1,0 +1,48 @@
+<div class="single">
+    <div class="single__hero">
+        <img src="/images/photos/10.jpg" alt="Image au hasard" class="single__image">
+        <h2 class="title title--single">Entrez votre magasin</h2>
+    </div>
+    <div class="single__details inner">
+        {{!--
+        <img src="/images/photos/10.jpg" alt="" class="single__map"> --}}
+        <h2 class="title">Remplissez le formulaire</h2>
+        <form action="/ajout" method="POST" class="card" enctype="multipart/form-data">
+            <label for="name">
+                Name:
+                <input type="text" name="name" id="name" value="{{magasin.name}}">
+            </label>
+            <label for="slug">
+                Slug:
+                <input type="text" name="slug" id="slug" value="{{magasin.slug}}">
+            </label>
+            <label for="description">
+                Description:
+                <textarea type="text" name="description" id="description" value="{{magasin.description}}"></textarea>
+            </label>
+            <label for="photo">
+                Photo:
+                <input type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg"> {{#if magasin.photo}}
+                <img src="/uploads/{{magasin.photo}}" alt=""> {{/if}} {{!--
+                <input type="text" name="photo" id="photo" value="{{magasin.photo}}"> --}}
+            </label>
+            <label for=location[address]>
+                Addresse:
+                <input type="text" name=location[address] id="address" value="{{magasin.location.address}}">
+            </label>
+            <label for="location[coordinates][0]">
+                Longitude:
+                <input type="text" name=location[coordinates][0] id="lng" value="{{magasin.location.coordinates.[0]}}">
+            </label>
+            <label for="location[coordinates][1]">
+                Latitude:
+                <input type="text" name=location[coordinates][1] id="lat" value="{{magasin.location.coordinates.[1]}}">
+            </label>
+
+            <input type="submit" name="Ajout du magasin">
+        </form>
+        <p>
+            <a href="/">Retour à la Home</a>
+        </p>
+    </div>
+</div>

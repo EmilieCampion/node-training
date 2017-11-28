@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,23 @@
   <link rel="shortcut icon" type="image/png" href="/images/icons/doughnut.png">
   <title>Document</title>
 </head>
+
 <body>
-  <div class="content">
-      {{>header}}
-      <div class="content">
-        {{{body}}}
-      </div>
+  {{#if flash.success}}
+  <div class="inner inner--flashes flash-messages">
+    <div class="flash flash--success">
+      <p class="flash__text">{{flash.success}}</p>
+      <button class="flash__remove" onClick="this.parentElement.remove()">x</button>
+    </div>
+
+  </div>
+  {{/if}}
+  <div>
+    {{>header}}
+    <div class="content">
+      {{{body}}}
+    </div>
   </div>
 </body>
+
 </html>

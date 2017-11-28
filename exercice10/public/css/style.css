@@ -440,6 +440,7 @@ body {
   color: #303030; }
 
 h1, h2, h3, h4, h5, h6 {
+  font-size: 5rem;
   font-family: 'Panama';
   font-weight: 600;
   letter-spacing: -1px; }
@@ -599,18 +600,7 @@ label {
   padding: 0;
   -ms-flex-pack: justify;
       justify-content: space-between;
-  background: #303030;
-  color:#c0c0c0; }
-  .nav ul{
-    list-style: none;
-  }
-  .nav ul li{
-    display: inline-block;
-    font-size: 2rem;
-  }
-  .nav a{
-    color:#c0c0c0;
-  }
+  background: #303030; }
   .nav__section {
     display: -ms-flexbox;
     display: flex; }
@@ -724,9 +714,13 @@ label {
 
 .store {
   background: white;
+  color:white;
   margin: 10px 0;
   width: 30%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05); }
+  .store a{
+    color:white;
+  }
   .store--wide {
     width: 100%; }
   .store__details {
@@ -766,6 +760,7 @@ label {
     border-bottom: 0; }
 
 .store__hero {
+ 
   position: relative;
   padding: 0 10px 0 10px;
   text-align: right; }
@@ -1128,22 +1123,3 @@ pre.error {
   white-space: pre-line; }
 
 /*# sourceMappingURL=style.css.map*/
-
-
-/* ----- Perso ----- */
-.col4{
-  width: 30%;
-  margin: 1% 1em;
-  float: left;
-  height: 300px;
-}
-@media (max-width : 600px){
-  .col4{
-    width: 100%;
-  }
-}
-.ovflow{
-  width: 100%;
-  overflow: hidden;
-  height: 100px;
-}

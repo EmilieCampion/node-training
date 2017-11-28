@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const magasinController = require('../controllers/magasinController');
-const deskController = require('../controllers/deskController');
+// const deskController = require('../controllers/deskController');
 const pagesController = require('../controllers/pagesController');
+const userController = require('../controllers/userController');
 
 // Do work here
 
@@ -31,7 +32,7 @@ const pagesController = require('../controllers/pagesController');
 //   let obj = req.params.name;
 //   // let jbo = obj.split("").reverse().join("");
 //   // res.send('Hey! It works! ' +jbo);
-  
+
 
 //   // let arr = [1,2,3]
 //   // console.log([...arr,4,5])
@@ -43,9 +44,25 @@ const pagesController = require('../controllers/pagesController');
 //   res.send('Hey! It works! ' +[...req.params.name].reverse().join(''));
 // });
 
-router.get('/',magasinController.getMagasins)
-router.get('/magasins',magasinController.getMagasins)
-router.get('/about',pagesController.about);
+router.get('/', magasinController.getMagasins)
+router.get('/magasins/:slug', magasinController.getMagasinBySlug)
+router.get('/magasins/:id/edit', magasinController.editMagasin)
+router.get('/magasins', magasinController.getMagasins)
+router.get('/about', pagesController.about);
+router.get('/ajout', pagesController.ajout);
+router.get('/contact', pagesController.contact);
 
-router.get('/contact',pagesController.contact);
+router.post('/ajout',
+    magasinController.upload,
+    magasinController.resize,
+    magasinController.createMagasin);
+router.post('/ajout/:id',
+    magasinController.upload,
+    magasinController.resize,
+    magasinController.updateMagasin);
+
+
+// USers controller
+router.get('/login', userController.loginForm)
+router.get('/register', userController.registerForm)
 module.exports = router;

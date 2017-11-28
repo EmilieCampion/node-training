@@ -1,7 +1,9 @@
-exports.about = (req,res) =>{
+exports.about = (req, res) => {
     res.render('about');
 }
-
-exports.contact = (req,res) =>{
+exports.ajout = (req, res) => {
+    res.render('ajout');
+}
+exports.contact = (req, res) => {
     res.render('contact');
 }
