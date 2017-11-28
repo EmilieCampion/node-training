@@ -1,12 +1,31 @@
-<form action="/register" class="form">
-    <h2>Register</h2>
-    <label for="name">Name:</label>
-    <input type="text" name="name">
-    <label for="email">Email:</label>
-    <input type="text" name="email">
-    <label for="password">Password:</label>
-    <input type="password" name="password">
-    <label for="password-confirm">Confirm Password:</label>
-    <input type="password" name="password-confirm">
-    <input type="submit" class="button" value! "Register">
-</form>
+<div class="single">
+
+    <div class="single__hero">
+        <img src="/uploads/a6b38a1d-38c3-47af-ae4c-0ab26d8edec3.jpeg" alt="" class="single__image">
+        <h2 class="title title--single">
+            Inscris-toi !
+        </h2>
+
+    </div>
+    <div class="single__details inner">
+        <h2 class="title">S'enregistrer</h2>
+        <form action="/register" class="form" method="POST">
+
+            <label for="name">Nom:
+                <input type="text" name="name" value={{user.name}}>
+            </label>
+            <label for="email">Email:
+                <input type="text" name="email" value={{user.email}}>
+            </label>
+            <label for="password">Mot de passe:
+                <input type="password" name="password" value={{user.password}}>
+            </label>
+            <label for="password-confirm">Confirmer mot de passe:
+                <input type="password" name="password-confirm" value={{user.password-confirm}}>
+            </label>
+            <input type="submit" class="button" value="S'enregistrer">
+        </form>
+        <a href="/">Retour à la Home</a>
+        </p>
+    </div>
+</div>

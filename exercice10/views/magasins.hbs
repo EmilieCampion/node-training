@@ -3,10 +3,8 @@
     {{#each magasins}}
     <div class="store store__hero">
         <a href="/magasins/{{this.slug}}">
-            {{!--
-            <div class="store__actions">
-                <a href="/" class="store__action--edit">edit</a>
-            </div> --}}
+
+
             <div>
                 <img src="/uploads/{{this.photo}}" alt="{{this.description}}">
                 <h2 class="title">{{this.name}}</h2>
@@ -16,8 +14,9 @@
                 {{this.description}}
             </p> --}}
         </a>
-        {{!--
-        <p>{{this.description}}</p> --}}
+        <div class="store__actions">
+            <a href="/magasins/{{this.id}}/edit" class="store__action--edit">Editer</a>
+        </div>
     </div>
 
     {{/each}}

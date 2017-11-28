@@ -8,11 +8,11 @@ if (major < 7 || (major === 7 && minor <= 5)) {
 }
 
 //launch Mongo Connection
-require('dotenv').config({path: 'variables.env'});
+require('dotenv').config({ path: 'variables.env' });
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DB_HOST, {useMongoClient:true}, (err)=>{
-    if(err) console.log(`WTF there was an error ${err.message}`);
+mongoose.connect(process.env.DB_HOST, { useMongoClient: true }, (err) => {
+    if (err) console.log(`WTF there was an error ${err.message}`);
     console.log("mongo is now connected to our system please request away :)");
 });
 
@@ -21,6 +21,7 @@ mongoose.connect(process.env.DB_HOST, {useMongoClient:true}, (err)=>{
 
 require('./models/Magasin');
 require('./models/Desk');
+require('./models/user');
 
 // Start our app!
 const app = require('./app');

@@ -7,7 +7,7 @@
         {{!--
         <img src="/images/photos/10.jpg" alt="" class="single__map"> --}}
         <h2 class="title">Remplissez le formulaire</h2>
-        <form action="/ajout" method="POST" class="card" enctype="multipart/form-data">
+        <form action="/ajout" method="POST" class="form" enctype="multipart/form-data">
             <label for="name">
                 Name:
                 <input type="text" name="name" id="name" value="{{magasin.name}}">
@@ -39,7 +39,7 @@
                 <input type="text" name=location[coordinates][1] id="lat" value="{{magasin.location.coordinates.[1]}}">
             </label>
 
-            <input type="submit" name="Ajout du magasin">
+            <input type="submit" class="button" name="Ajout du magasin">
         </form>
         <p>
             <a href="/">Retour à la Home</a>

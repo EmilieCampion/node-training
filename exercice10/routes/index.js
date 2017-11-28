@@ -1,9 +1,12 @@
+const { catchErrors } = require('../handlers/errorHandlers');
+
 const express = require('express');
 const router = express.Router();
 const magasinController = require('../controllers/magasinController');
 // const deskController = require('../controllers/deskController');
 const pagesController = require('../controllers/pagesController');
 const userController = require('../controllers/userController');
+const authenticationController = require('../controllers/authenticationController')
 
 // Do work here
 
@@ -46,10 +49,10 @@ const userController = require('../controllers/userController');
 
 router.get('/', magasinController.getMagasins)
 router.get('/magasins/:slug', magasinController.getMagasinBySlug)
-router.get('/magasins/:id/edit', magasinController.editMagasin)
+router.get('/magasins/:id/edit', authenticationController.isLoggedIn, magasinController.editMagasin)
 router.get('/magasins', magasinController.getMagasins)
 router.get('/about', pagesController.about);
-router.get('/ajout', pagesController.ajout);
+router.get('/ajout', authenticationController.isLoggedIn, magasinController.addMagasin);
 router.get('/contact', pagesController.contact);
 
 router.post('/ajout',
@@ -64,5 +67,11 @@ router.post('/ajout/:id',
 
 // USers controller
 router.get('/login', userController.loginForm)
-router.get('/register', userController.registerForm)
+router.get('/register', catchErrors(userController.registerForm))
+
+router.post('/login', authenticationController.login)
+router.get('/logout', authenticationController.logout)
+
+router.post('/register', userController.validateRegister, userController.register, authenticationController.login)
+
 module.exports = router;

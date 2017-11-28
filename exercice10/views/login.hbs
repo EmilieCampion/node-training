@@ -1,14 +1,31 @@
-<form action="/login" class="form" method="POST">
-    <h2>Login</h2>
-    <label for="email">Email Address</label>
-    <input type="text" name="email">
-    <label for="password">password</label>
-    <input type="password" name="password">
-    <input class="button" type="submit" value="login">
-</form>
-<form action="/account/forgot" class="form">
-    <h2>I forgot my password</h2>
-    <label for="email">Email</label>
-    <input type="text" name="email">
-    <input type="submit" value="send a Reset" class="button">
-</form>
+<div class="single">
+
+    <div class="single__hero">
+        <img src="/uploads/a6b38a1d-38c3-47af-ae4c-0ab26d8edec3.jpeg" alt="" class="single__image">
+        <h2 class="title title--single">
+            Inscris-toi !
+        </h2>
+
+    </div>
+    <div class="single__details inner">
+        <h2 class="title">Login</h2>
+        <form action="/login" class="form" method="POST">
+            <label for="email">Adresse Email
+                <input type="text" name="email">
+            </label>
+            <label for="password">Mot de passe
+                <input type="password" name="password">
+            </label>
+            <input class="button" type="submit" value="login">
+        </form>
+        <h2 class="title">J'ai oublié mon mot de passe</h2>
+        <form action="/account/forgot" class="form">
+            <label for="email">Email
+                <input type="text" name="email">
+            </label>
+            <input type="submit" value="send a Reset" class="button">
+        </form>
+        <a href="/">Retour à la Home</a>
+        </p>
+    </div>
+</div>

@@ -19,13 +19,19 @@
       </li>
     </ul>
     <ul class="nav__section nav__section--user">
+      {{#if user}}
+      <li class="nav__item ">
+        <a href="/logout" class="nav__link ">Logout</a>
+      </li>
+      {{else}}
       <li class="nav__item ">
         <a href="/register" class="nav__link ">Register</a>
       </li>
       <li class="nav__item ">
         <a href="/login" class="nav__link ">Login</a>
       </li>
-      </li>
+
+      {{/if}}
     </ul>
   </nav>
 </header>
