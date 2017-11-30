@@ -1,0 +1,19 @@
+{{!-- this is index content --}}
+<div class="inner">
+    <h1 class="title">Contact</h1>
+    <p>
+        <strong>Ici, vous retrouverez nos bureaux</strong>
+    </p>
+    {{#each contacts}}
+    <div class="floleft" style="width:43%; height:250px; float:left">
+        <h2>{{this.location.town}}</h2>
+        <h3>Personne de contact :
+            <span>{{this.name}}</span>
+        </h3>
+        <h3>Lieu</h3>
+        <p>{{this.location.address}} </p>
+    </div>
+    <div class="ovflow" style="width:56%; height:250px; float:right; overflow:hidden">
+        <img src="{{staticMap this.location.coordinates}}" alt="">
+    </div> {{/each}}
+</div>

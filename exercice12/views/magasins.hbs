@@ -1,0 +1,25 @@
+<div class="inner">
+    <h1 class="title">Magasins</h1>
+    <div class="stores inner">
+        {{#each magasins}}
+        <div class="store store__hero">
+            <a href="/magasins/{{this.slug}}">
+
+
+                <div>
+                    <img src="/uploads/{{this.photo}}" alt="{{this.description}}">
+                    <h2 class="title">{{this.name}}</h2>
+                </div>
+                {{!--
+                <p>
+                    {{this.description}}
+                </p> --}}
+            </a>
+            <div class="store__actions">
+                <a href="/magasins/{{this.id}}/edit" class="store__action--edit">Editer</a>
+            </div>
+        </div>
+
+        {{/each}}
+    </div>
+</div>
