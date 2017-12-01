@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+
+body:before {
+  content: '';
+  display: block;
+  background: linear-gradient(90deg, #7c0000 0%, #8e17ac 50%, #7c0000 85%);
+  height: 10px;
+  width: 100%; }
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Kaushan Script', cursive;
+}
+
+.nav {
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  background: #291919; 
+  font-family: 'Kaushan Script', cursive;
+}
+.nav__section {
+  display: -ms-flexbox;
+  display: flex; 
+}
+  .nav__section--search {
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto; 
+      }
+.nav__item {
+  display: -ms-flexbox;
+  display: flex; 
+}
+.nav__link {
+  background: #291919; 
+  color: white;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  text-transform: uppercase;
+  padding: 1.2rem 2rem 1rem 2rem;
+  display: block;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  transition: transform 0.2s;
+  border-bottom: 5px solid transparent; 
+}
+.nav__link:hover, .nav__link--active {
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  border-right-color: rgba(0, 0, 0, 0.05);
+  background: linear-gradient(90deg, #7c0000 0%, #8e17ac 50%, #7c0000 85%) fixed; 
+}
+
+.content{
+  margin: 0 auto;
+  width: 690px;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+ul.inline{
+  list-style: none;
+}
+.inline li {
+  display: inline-block;
+}
+
+.portfolio {
+  width: 200px;
+  height:200px;
+  overflow: hidden;
+  border: #7c0000 solid 2px;
+}
+.portfolio img {
+  width: 100%
+}
+
+/* Oscar Effect*/
+
+.grid {
+	overflow: hidden;
+	margin: 0;
+	padding: 3em 0 0 0;
+	width: 100%;
+	list-style: none;
+	text-align: center;
+}
+.grid figure {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	overflow: hidden;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	opacity: 0.8;
+}
+
+.grid figure figcaption {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+figure.effect-oscar {
+	background: -webkit-linear-gradient(45deg, #22682a 0%, #9b4a1b 40%, #3a342a 100%);
+	background: linear-gradient(45deg, #22682a 0%,#9b4a1b 40%,#3a342a 100%);
+  margin: 5px;
+}
+
+figure.effect-oscar img {
+	opacity: 0.9;
+	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s;
+}
+
+figure.effect-oscar figcaption {
+	background-color: rgba(58,52,42,0.7);
+	-webkit-transition: background-color 0.35s;
+	transition: background-color 0.35s;
+}
+
+figure.effect-oscar figcaption::before {
+	position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+	border: 1px solid #fff;
+	content: '';
+}
+
+figure.effect-oscar h2 {
+  margin: 20% 5px 10px 5px;
+  font-size: 14px;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,100%,0);
+	transform: translate3d(0,100%,0);
+}
+
+figure.effect-oscar figcaption::before,
+figure.effect-oscar p {
+  opacity: 0;
+  font-size: 12px;
+  margin: 10px;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+
+figure.effect-oscar:hover h2 {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.effect-oscar:hover figcaption::before,
+figure.effect-oscar:hover p {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+figure.effect-oscar:hover figcaption {
+	background-color: rgba(58,52,42,0);
+}
+
+figure.effect-oscar:hover img {
+	opacity: 0.4;
+}
+.center{
+  text-align: center;
+  margin-left: 40px;
+  width: 200px;
+}
+.round{
+  width: 125px;
+  height: 125px;
+  background: linear-gradient(90deg, #7c0000 0%, #8e17ac 50%, #7c0000 85%) fixed;
+  border-radius: 50%;
+  margin: 10px auto;
+}
+.round img {
+  width: 75px;
+  margin: 20px auto;
+}

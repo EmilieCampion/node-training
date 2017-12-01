@@ -1,0 +1,20 @@
+<h1>Portfolio</h1>
+<div class="grid">
+    <ul class="inline">
+        {{#each articles as |article|}}
+        <li>
+            {{!--
+            <a href="#"> --}}
+                <figure class="portfolio effect-oscar">
+
+                    <img src="/images/{{article.miniature}}" alt="{{article.text}}">
+                    <figcaption>
+                        <h2>{{{article.name}}}</h2>
+                        <p>{{article.text}}</p>
+                    </figcaption>
+                </figure>
+                {{!-- </a> --}}
+        </li>
+        {{/each}}
+    </ul>
+</div>
